@@ -64,17 +64,17 @@ function disData(data) {
   document.querySelector(".visibility").innerText = visib + " mi";
   document.querySelector(".pressure").innerText = press + " hPa";
   if (type === "Clouds") {
-    document.querySelector(".weathericon").src = "images/clouds.png";
+    document.querySelector(".weathericon").src = "images/clouds1.png";
   } else if (type === "Clear") {
-    document.querySelector(".weathericon").src = "images/clear.png";
+    document.querySelector(".weathericon").src = "images/clear1.png";
   } else if (type === "Rain") {
-    document.querySelector(".weathericon").src = "images/rain.png";
+    document.querySelector(".weathericon").src = "images/rain1.png";
   } else if (type === "Drizzle") {
-    document.querySelector(".weathericon").src = "images/drizzle.png";
+    document.querySelector(".weathericon").src = "images/drizzle1.png";
   } else if (type === "Mist") {
-    document.querySelector(".weathericon").src = "images/mist.png";
+    document.querySelector(".weathericon").src = "images/mist1.png";
   } else if (type === "Snow") {
-    document.querySelector(".weathericon").src = "images/snow.png";
+    document.querySelector(".weathericon").src = "images/snow1.png";
   }
 }
 
