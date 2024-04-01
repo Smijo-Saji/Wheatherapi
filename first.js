@@ -26,7 +26,7 @@ const month = [
 var date = `${weekday[date.getDay()].slice(0, 3)}, ${
   month[date.getMonth()]
 }  ${date.getDate()}`;
-p1.innerHTML = `<p>${date}</p>`;
+p1.innerHTML = `<p class="m-0">${date}</p>`;
 
 function searchwhe() {
   var city = i1.value;

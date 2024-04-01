@@ -3,9 +3,6 @@
   box-shadow: none;
 }
 
-body {
-  background-color: #1b2845 !important;
-}
 .backvedio {
   position: fixed;
   right: 0;
@@ -20,8 +17,6 @@ body {
 }
 .box1 {
   width: 120px;
-
-  padding: 15px;
 }
 .box1 p {
   margin: 0;
