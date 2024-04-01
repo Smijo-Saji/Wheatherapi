@@ -1,0 +1,107 @@
+:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
+}
+
+body {
+  background-color: #1b2845 !important;
+}
+.backvedio {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: brightness(20%);
+}
+.i1 {
+  color: rgba(255, 255, 255, 0.581);
+  outline: none;
+  font-size: 20px;
+}
+.box1 {
+  width: 120px;
+
+  padding: 15px;
+}
+.box1 p {
+  margin: 0;
+}
+.sec-1,
+.sec-2 {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px) !important;
+}
+
+.box {
+  width: 125px;
+  height: 120px;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.box p {
+  margin: 0;
+}
+.dep {
+  font-size: 20px;
+}
+.box .fa-2x {
+  font-size: 1.5rem !important;
+}
+.sunriseimg {
+  height: 200px;
+  background-image: url("images/stars.jpg");
+  border-radius: 15px;
+  background-size: cover;
+}
+.sun {
+  width: 50px;
+}
+.sunimgdiv {
+  margin: 0 40px;
+}
+.graphimg {
+  width: 100%;
+  height: 15.5vh;
+}
+
+@media screen and (max-width: 500px) {
+  .sunriseimg {
+    background-position: -100px;
+  }
+  .sun {
+    width: 30px;
+  }
+  .sunimgdiv {
+    margin: 0 0px;
+  }
+}
+
+@media (min-width: 995px) {
+  .sec-1 {
+    width: 28vw;
+  }
+  .sec-1,
+  .sec-2 {
+    height: 85vh;
+  }
+}
+
+@media (max-width: 1205px) and (min-width: 511px) {
+  .boxsep {
+    display: none;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .backvedio {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .backvedio {
+    width: auto;
+    height: 100%;
+  }
+}
