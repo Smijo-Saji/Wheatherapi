@@ -112,7 +112,7 @@ function sea(city) {
 }
 
 function errorpage() {
-  document.querySelector(".weathericon").src = "images/noda.png";
+  document.querySelector(".weathericon").src = "images/404.png";
   document.querySelector(".temp").innerText = "--°C";
   document.querySelector(".city").innerText = "--";
   document.querySelector(".humidity").innerText = "--%";
