@@ -1,13 +1,5 @@
 var date = new Date();
-const weekday = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const month = [
   "January",
   "February",
@@ -23,7 +15,7 @@ const month = [
   "December",
 ];
 
-var date = `${weekday[date.getDay()].slice(0, 3)}, ${
+var date = `${weekday[date.getDay()]}, ${
   month[date.getMonth()]
 }  ${date.getDate()}`;
 p1.innerHTML = `<p class="m-0">${date}</p>`;
@@ -54,7 +46,12 @@ function disData(data) {
   var feels = Math.round(data.main.feels_like - 273);
   var visib = Math.round(data.visibility * 0.000621371);
   var press = data.main.pressure;
+  var rise = data.sys.sunrise;
+  var zone = data.timezone;
+  var set = data.sys.sunset;
 
+  document.querySelector(".sunrise").innerText = timecalc(rise, zone);
+  document.querySelector(".sunset").innerText = timecalc(set, zone);
   document.querySelector(".temp").innerText = temprature + "°C";
   document.querySelector(".city").innerText = cityname;
   document.querySelector(".humidity").innerText = humidity + "%";
@@ -119,4 +116,17 @@ function errorpage() {
   document.querySelector(".feelslike").innerText = "--°C";
   document.querySelector(".visibility").innerText = "-- mi";
   document.querySelector(".pressure").innerText = "-- hPa";
+}
+
+function timecalc(sun, zone) {
+  const sunriseMillis = sun * 1000;
+  let sunriseDate = new Date(sunriseMillis);
+  sunriseDate.setSeconds(sunriseDate.getSeconds() + zone);
+  const sunriseHours = sunriseDate.getUTCHours().toString().padStart(2, "0");
+  const sunriseMinutes = sunriseDate
+    .getUTCMinutes()
+    .toString()
+    .padStart(2, "0");
+  const sunriseTime = `${sunriseHours}:${sunriseMinutes}`;
+  return sunriseTime;
 }
