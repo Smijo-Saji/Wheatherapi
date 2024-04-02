@@ -79,8 +79,6 @@ function disData(data) {
 }
 
 const locsearch = () => {
-  const state = document.querySelector(".status");
-
   const success = (position) => {
     const lat = position.coords.latitude;
     const log = position.coords.longitude;
@@ -92,7 +90,7 @@ const locsearch = () => {
   };
 
   const error = () => {
-    status.textContent = "unable to get";
+    errorpage();
   };
   navigator.geolocation.getCurrentPosition(success, error);
 };
@@ -106,7 +104,7 @@ function sea(city) {
       if (val.cod == 404) {
         errorpage();
       } else {
-        console.log(val);
+        disData(val);
       }
     });
 }
