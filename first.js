@@ -126,6 +126,8 @@ function errorpage() {
   document.querySelector(".feelslike").innerText = "--°C";
   document.querySelector(".visibility").innerText = "-- mi";
   document.querySelector(".pressure").innerText = "-- hPa";
+  document.querySelector(".srise").innerText = "-:-- AM";
+  document.querySelector(".sset").innerText = "-:-- PM";
 }
 
 function timecalc(sun, zone) {
