@@ -1,5 +1,13 @@
 var date = new Date();
-const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const weekday = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 const month = [
   "January",
   "February",
@@ -15,7 +23,7 @@ const month = [
   "December",
 ];
 
-var date = `${weekday[date.getDay()]}, ${
+var date = `${weekday[date.getDay()].slice(0, 3)}, ${
   month[date.getMonth()]
 }  ${date.getDate()}`;
 p1.innerHTML = `<p class="m-0">${date}</p>`;
@@ -37,6 +45,7 @@ function searchwhe() {
 function disData(data) {
   var cityname = data.name;
   var temprature = Math.round(data.main.temp - 273);
+
   var humidity = data.main.humidity;
   var windspeed = data.wind.speed;
   var type = data.weather[0].main;
@@ -50,8 +59,9 @@ function disData(data) {
   var zone = data.timezone;
   var set = data.sys.sunset;
 
-  document.querySelector(".sunrise").innerText = timecalc(rise, zone);
-  document.querySelector(".sunset").innerText = timecalc(set, zone);
+  document.querySelector(".srise").innerText = timecalc(rise, zone);
+  document.querySelector(".sset").innerText = timecalc(set, zone);
+
   document.querySelector(".temp").innerText = temprature + "°C";
   document.querySelector(".city").innerText = cityname;
   document.querySelector(".humidity").innerText = humidity + "%";
@@ -119,8 +129,7 @@ function errorpage() {
 }
 
 function timecalc(sun, zone) {
-  const sunriseMillis = sun * 1000;
-  let sunriseDate = new Date(sunriseMillis);
+  let sunriseDate = new Date(sun * 1000);
   sunriseDate.setSeconds(sunriseDate.getSeconds() + zone);
   const sunriseHours = sunriseDate.getUTCHours().toString().padStart(2, "0");
   const sunriseMinutes = sunriseDate
@@ -128,5 +137,12 @@ function timecalc(sun, zone) {
     .toString()
     .padStart(2, "0");
   const sunriseTime = `${sunriseHours}:${sunriseMinutes}`;
-  return sunriseTime;
+  var splitTime = sunriseTime.split(":");
+  var hours = parseInt(splitTime[0]);
+  var minutes = parseInt(splitTime[1]);
+  var period = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  return hours + ":" + minutes + " " + period;
 }

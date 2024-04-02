@@ -2,6 +2,9 @@
   outline: 0;
   box-shadow: none;
 }
+button:focus {
+  border: 0;
+}
 * {
   font-family: "Kanit", sans-serif;
   font-weight: 200;
