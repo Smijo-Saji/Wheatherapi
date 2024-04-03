@@ -8,6 +8,7 @@ button:focus {
 * {
   font-family: "Kanit", sans-serif;
   font-weight: 200;
+  color: rgb(249, 247, 247);
 }
 .backvedio {
   position: fixed;
@@ -67,7 +68,10 @@ button:focus {
   width: 100%;
   height: 22vh;
 }
-
+.weathericon {
+  width: 224px;
+  height: 224px;
+}
 @media screen and (max-width: 500px) {
   .sunriseimg {
     background-position: -100px;
@@ -85,13 +89,14 @@ button:focus {
     width: 28vw;
   }
 }
-@media (max-width: 986px) and (min-width: 492px) {
-  .cur-img {
-    width: 330px !important;
+
+@media (max-width: 1230px) and (min-width: 990px) {
+  .boxsep {
+    display: none;
   }
 }
-@media (max-width: 1205px) and (min-width: 511px) {
-  .boxsep {
+@media (max-width: 1124px) and (min-width: 988px) {
+  .wno {
     display: none;
   }
 }

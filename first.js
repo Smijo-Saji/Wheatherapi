@@ -58,6 +58,7 @@ function disData(data) {
   var rise = data.sys.sunrise;
   var zone = data.timezone;
   var set = data.sys.sunset;
+  var icon = data.weather[0].icon;
 
   document.querySelector(".srise").innerText = timecalc(rise, zone);
   document.querySelector(".sset").innerText = timecalc(set, zone);
@@ -70,19 +71,22 @@ function disData(data) {
   document.querySelector(".feelslike").innerText = feels + "°C";
   document.querySelector(".visibility").innerText = visib + " mi";
   document.querySelector(".pressure").innerText = press + " hPa";
-  if (type === "Clouds") {
-    document.querySelector(".weathericon").src = "images/clouds.png";
-  } else if (type === "Clear") {
-    document.querySelector(".weathericon").src = "images/clear.png";
-  } else if (type === "Rain") {
-    document.querySelector(".weathericon").src = "images/rain.png";
-  } else if (type === "Drizzle") {
-    document.querySelector(".weathericon").src = "images/drizzle.png";
-  } else if (type === "Mist") {
-    document.querySelector(".weathericon").src = "images/mist.png";
-  } else if (type === "Snow") {
-    document.querySelector(".weathericon").src = "images/snow.png";
-  }
+  document.querySelector(
+    ".weathericon"
+  ).src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+  // if (temprature === "Clouds") {
+  //   document.querySelector(".weathericon").src = "images/clouds.png";
+  // } else if (type === "Clear") {
+  //   document.querySelector(".weathericon").src = "images/clear.png";
+  // } else if (type === "Rain") {
+  //   document.querySelector(".weathericon").src = "images/rain.png";
+  // } else if (type === "Drizzle") {
+  //   document.querySelector(".weathericon").src = "images/drizzle.png";
+  // } else if (type === "Mist") {
+  //   document.querySelector(".weathericon").src = "images/mist.png";
+  // } else if (type === "Snow") {
+  //   document.querySelector(".weathericon").src = "images/snow.png";
+  // }
 }
 
 const locsearch = () => {
@@ -147,4 +151,10 @@ function timecalc(sun, zone) {
   hours = hours ? hours : 12;
   minutes = minutes < 10 ? "0" + minutes : minutes;
   return hours + ":" + minutes + " " + period;
+}
+
+function keyboard(event) {
+  if (event.key === "Enter") {
+    searchwhe();
+  }
 }

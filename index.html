@@ -59,6 +59,7 @@
                   id="i1"
                   style="width: 85%"
                   autocomplete="off"
+                  onkeypress="keyboard(event)"
                 />
               </div>
               <div>
@@ -70,11 +71,15 @@
                 </button>
               </div>
             </div>
-            <div class="text-center mt-3 text-white">
+            <div class="text-center mt-3">
               <h2 class="city m-0">Kozhikode</h2>
               <div id="p1" class="text-white mt-1"></div>
 
-              <img src="images/clear.png" alt="" class="weathericon" />
+              <img
+                src="https://openweathermap.org/img/wn/02n@2x.png"
+                alt=""
+                class="weathericon"
+              />
 
               <h1 class="temp m-0 mt-1">31°C</h1>
               <h2 class="imgdesc m-0">Clear sky</h2>
@@ -172,16 +177,20 @@
                   </div>
                 </div>
               </div>
-              <div class="sec-2.2 col-lg-3">
+              <div
+                class="sec-2.2 col-lg-3 d-flex flex-column align-items-start"
+              >
                 <div class="mt-3 d-flex">
                   <img
                     src="images/compus.gif"
                     alt=""
-                    style="width: 160px; height: 156px"
+                    style="width: 100%; height: 156px"
                   />
                 </div>
                 <div class="d-flex justify-content-center flex-column pe-2">
-                  <p class="text-white m-0 pb-2 mt-2 ps-2">Wheather Updates</p>
+                  <p class="m-0 pb-2 mt-2 ps-2">
+                    <span class="wno">Weather</span> Updates
+                  </p>
                   <div
                     id="carouselExampleAutoplaying"
                     class="carousel slide"
@@ -192,21 +201,21 @@
                         <img
                           src="images/news1.jpg"
                           class="d-block rounded cur-img"
-                          style="height: 180px"
+                          style="height: 180px; width: 100%"
                         />
                       </div>
                       <div class="carousel-item" data-bs-interval="3000">
                         <img
                           src="images/news2.jpg"
                           class="d-block rounded cur-img"
-                          style="height: 180px"
+                          style="height: 180px; width: 100%"
                         />
                       </div>
                       <div class="carousel-item" data-bs-interval="3000">
                         <img
                           src="images/news3.jpg"
                           class="d-block rounded cur-img"
-                          style="height: 180px"
+                          style="height: 180px; width: 100%"
                         />
                       </div>
                     </div>
@@ -215,7 +224,7 @@
               </div>
             </div>
             <div class="graph text-white ps-3">
-              <p class="m-0 pt-2 pb-1">Wheather Analysis</p>
+              <p class="m-0 pt-2 pb-1">Weather Analysis</p>
               <div>
                 <img src="images/temp analysis.png" alt="" class="graphimg" />
               </div>
