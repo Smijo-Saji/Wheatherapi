@@ -77,20 +77,11 @@ function disData(data) {
 }
 
 const locsearch = () => {
-  const success = (position) => {
-    const lat = position.coords.latitude;
-    const log = position.coords.longitude;
-    fetch(
-      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${log}&localityLanguage=en`
-    )
-      .then((loc) => loc.json())
-      .then((loc) => sea(loc.locality));
-  };
-
-  const error = () => {
-    errorpage();
-  };
-  navigator.geolocation.getCurrentPosition(success, error);
+  fetch(
+    `https://api.geoapify.com/v1/ipinfo?apiKey=7f5ecd0663fa47ae965c8d8840e3e362`
+  )
+    .then((response) => response.json())
+    .then((data) => sea(data.city.name));
 };
 
 function sea(city) {

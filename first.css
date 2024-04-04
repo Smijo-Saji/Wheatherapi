@@ -11,6 +11,7 @@ button:focus {
   color: rgb(249, 247, 247);
 }
 .backvedio {
+  top: 0;
   position: fixed;
   right: 0;
   bottom: 0;
