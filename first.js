@@ -97,7 +97,7 @@ const locsearch = () => {
       `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${log}&localityLanguage=en`
     )
       .then((loc) => loc.json())
-      .then((loc) => sea(loc.city));
+      .then((loc) => sea(loc.locality));
   };
 
   const error = () => {
