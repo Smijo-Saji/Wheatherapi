@@ -74,19 +74,6 @@ function disData(data) {
   document.querySelector(
     ".weathericon"
   ).src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-  // if (temprature === "Clouds") {
-  //   document.querySelector(".weathericon").src = "images/clouds.png";
-  // } else if (type === "Clear") {
-  //   document.querySelector(".weathericon").src = "images/clear.png";
-  // } else if (type === "Rain") {
-  //   document.querySelector(".weathericon").src = "images/rain.png";
-  // } else if (type === "Drizzle") {
-  //   document.querySelector(".weathericon").src = "images/drizzle.png";
-  // } else if (type === "Mist") {
-  //   document.querySelector(".weathericon").src = "images/mist.png";
-  // } else if (type === "Snow") {
-  //   document.querySelector(".weathericon").src = "images/snow.png";
-  // }
 }
 
 const locsearch = () => {
