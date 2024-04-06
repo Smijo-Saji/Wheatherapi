@@ -42,13 +42,14 @@ function searchwhe() {
       }
     });
 }
+
 function disData(data) {
   var cityname = data.name;
   var temprature = Math.round(data.main.temp - 273);
 
   var humidity = data.main.humidity;
   var windspeed = data.wind.speed;
-  var type = data.weather[0].main;
+  // var type = data.weather[0].main;
   var desc =
     data.weather[0].description.charAt(0).toUpperCase() +
     data.weather[0].description.slice(1);
